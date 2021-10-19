@@ -11,7 +11,13 @@ import SwiftUI
 struct VK_PlusSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if GlobalProperties.share.useDataFromNet {
+                FirstViewLoginPassword()
+            }
+            else {
+                //Отладка без запроса логина и пароля, а также без доступа к сети
+                SecondViewWithTab()
+            }
         }
     }
 }

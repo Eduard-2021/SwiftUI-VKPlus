@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "6A691900-C53A-4ED8-834A-D4A458C7D8CD"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4D56E9ED-00A8-4946-AFE8-85B72EAEBF30"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VK_PlusSwiftUI/Views/WebLoad.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "webView(_:decidePolicyFor:decisionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A5369325-049A-4613-B5FB-3B08D39039E4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VK_PlusSwiftUI/Views/WebLoad.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "webView(_:decidePolicyFor:decisionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4E56EACE-7B12-4FD6-B8DE-0761CD72BBC7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VK_PlusSwiftUI/Views/WebLoad.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "init()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "54E1FD77-DC96-4AFB-8E85-7DF14F96989F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VK_PlusSwiftUI/Views/WebLoad.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "logOutSegue()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "632C229E-EF23-42FA-90FE-4451EE1DADA0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VK_PlusSwiftUI/Views/NewsView/WorkWithNet/LoadNews.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "loadPhoto(isRefresh:itemsVKUnwrapped:profilesVKUsers:profilesVKGroups:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6FFB607D-D655-475C-9E37-FE412BF210A0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VK_PlusSwiftUI/NetworkService/MainNetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "getNews(startTime:endTime:nextGroup:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "19970C7C-14CB-4B8A-8A11-2F7DCA7C1167"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VK_PlusSwiftUI/NetworkService/MainNetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
+            landmarkName = "getNews(startTime:endTime:nextGroup:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8F48A74F-E7D3-41AA-8239-4179B8DF8726"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VK_PlusSwiftUI/Views/NewsView/CellsOfNewsView/CellWithLikesOfNewsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B52C8FD0-823B-4AF2-9C8F-2C497E75F388"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VK_PlusSwiftUI/NetworkService/MainNetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "getNews(startTime:endTime:nextGroup:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B52C8FD0-823B-4AF2-9C8F-2C497E75F388 - 9382536a6df9657c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VK_PlusSwiftUI.MainNetworkService.getNews(startTime: Swift.Double, endTime: Swift.Double, nextGroup: Swift.String, completion: (Swift.Optional&lt;VK_PlusSwiftUI.VKResponseDecodable&lt;VK_PlusSwiftUI.VKNewsItems&gt;&gt;, Swift.Optional&lt;VK_PlusSwiftUI.VKResponse&lt;VK_PlusSwiftUI.VKNewsProfilesUsers&gt;&gt;, Swift.Optional&lt;VK_PlusSwiftUI.VKResponse&lt;VK_PlusSwiftUI.VKNewsProfilesGroups&gt;&gt;, Swift.Optional&lt;VK_PlusSwiftUI.VKResponse&lt;VK_PlusSwiftUI.VKNextGroupOfNews&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "VK_PlusSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eduard/Documents/Xcode/SwiftUI/VK_PlusSwiftUI/VK_PlusSwiftUI/NetworkService/MainNetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "179"
+                  endingLineNumber = "179"
+                  offsetFromSymbolStart = "3032">
+               </Location>
+               <Location
+                  uuid = "B52C8FD0-823B-4AF2-9C8F-2C497E75F388 - d5abcb4f062fec42"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in VK_PlusSwiftUI.MainNetworkService.getNews(startTime: Swift.Double, endTime: Swift.Double, nextGroup: Swift.String, completion: (Swift.Optional&lt;VK_PlusSwiftUI.VKResponseDecodable&lt;VK_PlusSwiftUI.VKNewsItems&gt;&gt;, Swift.Optional&lt;VK_PlusSwiftUI.VKResponse&lt;VK_PlusSwiftUI.VKNewsProfilesUsers&gt;&gt;, Swift.Optional&lt;VK_PlusSwiftUI.VKResponse&lt;VK_PlusSwiftUI.VKNewsProfilesGroups&gt;&gt;, Swift.Optional&lt;VK_PlusSwiftUI.VKResponse&lt;VK_PlusSwiftUI.VKNextGroupOfNews&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "VK_PlusSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eduard/Documents/Xcode/SwiftUI/VK_PlusSwiftUI/VK_PlusSwiftUI/NetworkService/MainNetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "160"
+                  endingLineNumber = "160"
+                  offsetFromSymbolStart = "460">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
