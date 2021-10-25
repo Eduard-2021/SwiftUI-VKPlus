@@ -7,17 +7,18 @@
 
 import SwiftUI
 
-struct BigPhoto: View {
+struct BigPhotosOfFriedView: View {
     @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
     var gridItemLayout = [GridItem(.flexible())]
     
-    var photosVK: [OnePhotoOfFriendOptimalSize]
+    var photosVK: FetchedResults<FriendPhotoOptimalSizeEntity>
+    var indicesFetchedAllPhotosFriend: [Int]
     
     var body: some View {
         ZStack {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: gridItemLayout , alignment: .center) {
-                    ForEach(photosVK.indices, id: \.self ) { index in
+                    ForEach(indicesFetchedAllPhotosFriend, id: \.self ) { index in
                         Image(uiImage: photosVK[index].userPhoto ?? UIImage(systemName: "hourglass.tophalf.fill")!)
                             .resizable()
                             .scaledToFit()
@@ -27,6 +28,7 @@ struct BigPhoto: View {
                     }
                 }
             }
+            .padding(.bottom, 80)
             ButtonBack(presentation: presentation)
                 .padding(.top,25)
         }

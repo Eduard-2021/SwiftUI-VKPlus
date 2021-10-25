@@ -14,7 +14,9 @@ struct  AllGroupView: View {
     let sizePhoto: CGFloat = 80
     @State var searchText = "Music"
     @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
-    @EnvironmentObject var loadGroups: LoadGroups
+//    @EnvironmentObject var loadGroups: LoadGroups
+    
+    @Environment(\.managedObjectContext) var managedObjectContext
     
     var body: some View {
         ZStack {
@@ -56,7 +58,8 @@ struct  AllGroupView: View {
                             }
                             .padding(.horizontal, 0)
                             .onTapGesture {
-                                loadGroups.groupsVK.append(groupVK)
+                                SaveAndDeleteGroupInCoreData().save(newGroup: groupVK, managedObjectContext: managedObjectContext)
+//                                loadGroups.groupsVK.append(groupVK)
                                 self.presentation.wrappedValue.dismiss()
                             }
                     }
@@ -82,38 +85,5 @@ struct  AllGroupView: View {
     } 
 }
 
-class LoadAllFoundGroups: ObservableObject {
-    @Published var groupsVK = [VKGroup]()
-    let mainNetworkService = MainNetworkService()
-    
-    func load(searchText: String) {
-        if !GlobalProperties.share.useDataFromNet {
-            //Блок для отладки без доступа к сети
-            var groups = [VKGroup]()
-            groups.append(VKGroup(idGroup: 1, nameGroup: "First", imageGroupURL: "", groupAvatar: UIImage(named: "milk3"), id:UUID()))
-            groups.append(VKGroup(idGroup: 1, nameGroup: "Second", imageGroupURL: "", groupAvatar: UIImage(named: "Фон"), id:UUID()))
-            groups.append(VKGroup(idGroup: 1, nameGroup: "Thrid", imageGroupURL: "", groupAvatar: UIImage(named: "сливки"), id:UUID()))
-            groups.append(VKGroup(idGroup: 1, nameGroup: "Fourth", imageGroupURL: "", groupAvatar: UIImage(named: "milk3"), id:UUID()))
-            groups.append(VKGroup(idGroup: 1, nameGroup: "Fifth", imageGroupURL: "", groupAvatar: UIImage(named: "milk3"), id:UUID()))
-            groups.append(VKGroup(idGroup: 1, nameGroup: "Sixth", imageGroupURL: "", groupAvatar: UIImage(named: "milk3"), id:UUID()))
-            groups.append(VKGroup(idGroup: 1, nameGroup: "Seventh", imageGroupURL: "", groupAvatar: UIImage(named: "milk3"), id:UUID()))
 
-            if groupsVK.count == 0 { groupsVK = groups}
-        }
-        else {
-            mainNetworkService.groupsSearch(textForSearch: searchText, numberGroups: 20) { (groups) in
-                guard var groups = groups else {return}
-                for (index, value) in groups.enumerated() {
-                    self.mainNetworkService.getPhotoFromNet(url: value.imageGroupURL) {(image) in
-                        guard let image = image else {return}
-                        groups[index].groupAvatar = image
-                        if groups.last?.groupAvatar != nil {
-                            self.groupsVK = groups
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
 

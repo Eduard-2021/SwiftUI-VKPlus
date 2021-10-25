@@ -95,7 +95,6 @@ class WebViewModel: ObservableObject {
             URLQueryItem(name: "display", value: "mobile"),
             URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
             URLQueryItem(name: "scope", value: "336918"),
-//            URLQueryItem(name: "scope", value: "wall,photos,docs,offline,ads,video,audio"),
             URLQueryItem(name: "response_type", value: "token"),
             URLQueryItem(name: "v", value: "5.131")
     ]
@@ -142,9 +141,9 @@ struct WebLoad: View {
         VStack {
             WebView(isAuthorizationVK: $isAuthorizationVK, webView: model.webView)
                 .frame(height: UIScreen.main.bounds.height-400)
-            Text("Логин: +380970795220")
-            Text("Пароль: 171819B1")
-            Spacer()
+//            Text("Логин: +380970795220")
+//            Text("Пароль: 171819B1")
+//            Spacer()
         }
         .fullScreenCover(isPresented: $isAuthorizationVK, content: {
             SecondViewWithTab()

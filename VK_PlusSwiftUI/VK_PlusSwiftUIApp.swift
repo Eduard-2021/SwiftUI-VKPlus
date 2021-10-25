@@ -9,15 +9,13 @@ import SwiftUI
 
 @main
 struct VK_PlusSwiftUIApp: App {
+    
+    let coreDataService = CoreDataService(modelName: "MainContainer")
+    
     var body: some Scene {
         WindowGroup {
-            if GlobalProperties.share.useDataFromNet {
-                FirstViewLoginPassword()
-            }
-            else {
-                //Отладка без запроса логина и пароля, а также без доступа к сети
-                SecondViewWithTab()
-            }
+            FirstViewLoginPassword().environment(\.managedObjectContext, coreDataService.context)
         }
     }
 }
+

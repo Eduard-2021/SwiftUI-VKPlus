@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FriendEntity" representedClassName=".FriendEntity" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="fullName" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="idUser" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="userAvatar" optional="YES" attributeType="Transformable" valueTransformerName="ImageTransformer" customClassName="UIImage"/>
+        <attribute name="userAvatarURL" optional="YES" attributeType="String"/>
+        <relationship name="allPhotosFriend" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FriendPhotoOptimalSizeEntity" inverseName="friend" inverseEntity="FriendPhotoOptimalSizeEntity"/>
+    </entity>
+    <entity name="FriendPhotoOptimalSizeEntity" representedClassName="FriendPhotoOptimalSizeEntity" syncable="YES">
+        <attribute name="heightInGrid" optional="YES" attributeType="Float" valueTransformerName="CGRectTransformer" defaultValueString="0.0" usesScalarValueType="YES" customClassName="CGFloat"/>
+        <attribute name="i_like" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="idPhoto" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="idUser" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String"/>
+        <attribute name="numLikes" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="serialNumberPhoto" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="userPhoto" optional="YES" attributeType="Transformable" valueTransformerName="ImageTransformer" customClassName="UIImage"/>
+        <relationship name="friend" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FriendEntity" inverseName="allPhotosFriend" inverseEntity="FriendEntity"/>
+    </entity>
+    <entity name="GroupEntity" representedClassName="GroupEntity" syncable="YES">
+        <attribute name="groupAvatar" optional="YES" attributeType="Transformable" valueTransformerName="ImageTransformer" customClassName="UIImage"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="idGroup" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="imageGroupURL" optional="YES" attributeType="String"/>
+        <attribute name="nameGroup" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="FriendEntity" positionX="-63" positionY="-18" width="128" height="149"/>
+        <element name="FriendPhotoOptimalSizeEntity" positionX="-54" positionY="45" width="128" height="179"/>
+        <element name="GroupEntity" positionX="-63" positionY="99" width="128" height="104"/>
+    </elements>
+</model>
