@@ -140,7 +140,7 @@ struct WebLoad: View {
     var body: some View {
         VStack {
             WebView(isAuthorizationVK: $isAuthorizationVK, webView: model.webView)
-                .frame(height: UIScreen.main.bounds.height-400)
+//                .frame(height: UIScreen.main.bounds.height-400)
 //            Text("Логин: +380970795220")
 //            Text("Пароль: 171819B1")
 //            Spacer()

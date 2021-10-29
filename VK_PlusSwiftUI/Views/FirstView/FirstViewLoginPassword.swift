@@ -31,10 +31,10 @@ extension UIApplication {
    }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        FirstViewLoginPassword()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FirstViewLoginPassword()
+//    }
+//}
 
 

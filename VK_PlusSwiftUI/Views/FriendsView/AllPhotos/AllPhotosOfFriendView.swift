@@ -21,7 +21,7 @@ struct AllPhotosOfFriendView: View {
     
     let constants = Constants()
     var gridItemLayout = Array(repeating: GridItem(.flexible(), spacing: 25, alignment: .top), count: 2)
-
+    
     @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
     
     @State var isPressedButtonLike = false
@@ -54,15 +54,15 @@ struct AllPhotosOfFriendView: View {
                     if !indicesFetchedAllPhotosFriend.isEmpty {
                         ForEach(indicesFetchedAllPhotosFriend, id: \.self) {
                             index in
-                                VStack {
-                                    AllPhotosFriendView(fetchedPhotosFriend: fetchedAllPhotosAllFriends, index: index, indicesFetchedAllPhotosFriend: indicesFetchedAllPhotosFriend)
-                                        .onTapGesture {
-//                                            ClearContainerCoreData.deleteAll(managedObjectContext: managedObjectContext, fetchedEntity: fetchedAllPhotosAllFriends)
-                                            isPressedPhoto = !isPressedPhoto
+                            VStack {
+                                AllPhotosFriendView(fetchedPhotosFriend: fetchedAllPhotosAllFriends, index: index, indicesFetchedAllPhotosFriend: indicesFetchedAllPhotosFriend)
+                                    .onTapGesture {
+                                        //                                            ClearContainerCoreData.deleteAll(managedObjectContext: managedObjectContext, fetchedEntity: fetchedAllPhotosAllFriends)
+                                        isPressedPhoto = !isPressedPhoto
                                     }
                                     .fullScreenCover(isPresented: $isPressedPhoto, content: {BigPhotosOfFriedView(photosVK:fetchedAllPhotosAllFriends, indicesFetchedAllPhotosFriend: indicesFetchedAllPhotosFriend)})
-                                    LikesView(fetchedPhotosFriend: fetchedAllPhotosAllFriends, index: index)
-                                }
+                                LikesView(fetchedPhotosFriend: fetchedAllPhotosAllFriends, index: index)
+                            }
                         }
                     }
                 }
@@ -74,14 +74,14 @@ struct AllPhotosOfFriendView: View {
         }
         .padding(.top,25)
         .onAppear() {
-                loadAllPhotosOfFriend.load(fetchFriend: staticProperies.fetchFriend!, managedObjectContext: managedObjectContext)
+            loadAllPhotosOfFriend.load(fetchFriend: staticProperies.fetchFriend!, managedObjectContext: managedObjectContext)
         }
     }
 }
-    
+
 
 struct AllPhotosFriendView: View {
-
+    
     let fetchedPhotosFriend: FetchedResults<FriendPhotoOptimalSizeEntity>
     var index: Int
     
@@ -112,47 +112,47 @@ struct LikesView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     let fetchedPhotosFriend: FetchedResults<FriendPhotoOptimalSizeEntity>
     var index: Int
-
+    
     var body: some View {
         HStack {
-                Spacer()
-                HStack(spacing: 0) {
-                    ZStack {
-                        Rectangle()
-                            .fill(Color.white.opacity(0.001))
-                            .frame(width: 40, height: 40)
-                            .onTapGesture {
-                                
+            Spacer()
+            HStack(spacing: 0) {
+                ZStack {
+                    Rectangle()
+                        .fill(Color.white.opacity(0.001))
+                        .frame(width: 40, height: 40)
+                        .onTapGesture {
+                            
+                        }
+                    Button(action: {
+                        if !fetchedPhotosFriend[index].i_like {
+                            withAnimation {
+                                fetchedPhotosFriend[index].i_like = true
                             }
-                        Button(action: {
-                            if !fetchedPhotosFriend[index].i_like {
-                                withAnimation {
-                                    fetchedPhotosFriend[index].i_like = true
-                                }
-                                fetchedPhotosFriend[index].numLikes += 1
+                            fetchedPhotosFriend[index].numLikes += 1
+                        }
+                        else {
+                            withAnimation {
+                                fetchedPhotosFriend[index].i_like = false
                             }
-                            else {
-                                withAnimation {
-                                    fetchedPhotosFriend[index].i_like = false
-                                }
-                                fetchedPhotosFriend[index].numLikes -= 1
-                            }
-                            try! managedObjectContext.save()
-                        }, label: {
-                            Image(systemName: fetchedPhotosFriend[index].i_like  ?  "heart.fill" : "heart")
-                                .resizable()
-                                .scaledToFit()
-                                .foregroundColor(fetchedPhotosFriend[index].i_like ? Color.red : Color.blue)
-                                .frame(width:20)
-                                .rotation3DEffect(
-                                    Angle(degrees: fetchedPhotosFriend[index].i_like ? 180 : 0),
-                                    axis: (x: 0.0, y: 1.0, z: 0.0))
-                                
+                            fetchedPhotosFriend[index].numLikes -= 1
+                        }
+                        try! managedObjectContext.save()
+                    }, label: {
+                        Image(systemName: fetchedPhotosFriend[index].i_like  ?  "heart.fill" : "heart")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(fetchedPhotosFriend[index].i_like ? Color.red : Color.blue)
+                            .frame(width:20)
+                            .rotation3DEffect(
+                                Angle(degrees: fetchedPhotosFriend[index].i_like ? 180 : 0),
+                                axis: (x: 0.0, y: 1.0, z: 0.0))
+                        
                     })
-                    }
-                    Text("\(fetchedPhotosFriend[index].numLikes)")
                 }
-                Spacer().frame(width: 10)
+                Text("\(fetchedPhotosFriend[index].numLikes)")
+            }
+            Spacer().frame(width: 10)
             
         }
     }
