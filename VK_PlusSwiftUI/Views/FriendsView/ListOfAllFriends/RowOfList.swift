@@ -11,7 +11,9 @@ import CoreData
 struct rowOfList: View {
     var resultsSearch: [FetchedResults<FriendEntity>.Element]
     let index: Int
+    let compression: CGFloat = 0.8
     let sizeAvatar: CGFloat = 70
+    @State var isPressedPhoto = false
     
     var body: some View {
         VStack {
@@ -32,18 +34,8 @@ struct rowOfList: View {
             }
             
             HStack {
-                ZStack {
-                    ViewBuilderForShadowAvatar(sizePhoto: sizeAvatar) {
-                        Circle()
-                    }
-                    Circle()
-                        .stroke(Color.black, lineWidth: 1)
-                        .frame(width: sizeAvatar, height: sizeAvatar)
-                    Image(uiImage: resultsSearch[index].userAvatar ?? UIImage(systemName: "hourglass.tophalf.fill")!)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .modifier(ModifierForAvatar(sizePhoto: sizeAvatar))
-                }
+                ViewAvatarWithAnimation(sizeAvatar: sizeAvatar, compression: compression, avatar: resultsSearch[index].userAvatar)
+                
                 Spacer().frame(width: 20)
                 Text("\(resultsSearch[index].fullName!)")
                     .font(.system(size: 18))

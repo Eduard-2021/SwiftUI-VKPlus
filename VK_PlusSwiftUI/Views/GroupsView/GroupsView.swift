@@ -14,7 +14,8 @@ struct  GroupsView: View {
     @ObservedObject var loadGroups = LoadFromNetAllGroupsInCoreData()
     @State var isPressedButtonAddGroups = false
     @State var isPressedButtonSearch = false
-    let sizePhoto: CGFloat = 80
+    let sizeAvatar: CGFloat = 80
+    let compression: CGFloat = 0.8
     @State var searchText = ""
     
     @Environment(\.managedObjectContext) var managedObjectContext
@@ -29,9 +30,7 @@ struct  GroupsView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
-//                ZStack{
                 NavigationLink(destination: AllGroupView(), isActive: $isPressedButtonAddGroups, label: {EmptyView()})
-//                }
                 ZStack {
                     Rectangle()
                         .fill(Color(#colorLiteral(red: 0.2119982541, green: 0.5794246793, blue: 0.9729811549, alpha: 1)))
@@ -45,19 +44,7 @@ struct  GroupsView: View {
                 List() {
                     ForEach(resultsSearch) { groupVK in
                         HStack {
-                            ZStack {
-                                ViewBuilderForShadowAvatar(sizePhoto: sizePhoto) {
-                                    Circle()
-                                }
-                                Circle()
-                                    .stroke(Color.black, lineWidth: 1)
-                                    .frame(width: sizePhoto, height: sizePhoto)
-                                Image(uiImage: groupVK.groupAvatar ?? UIImage(systemName: "hourglass.tophalf.fill")!)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .modifier(ModifierForAvatar(sizePhoto: sizePhoto))
-                                
-                            }
+                            ViewAvatarWithAnimation(sizeAvatar: sizeAvatar, compression: compression, avatar: groupVK.groupAvatar)
                             Spacer().frame(width: 20)
                             Text("\(groupVK.nameGroup!)")
                             Spacer()

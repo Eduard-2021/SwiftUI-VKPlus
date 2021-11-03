@@ -34,6 +34,6 @@ struct CellWithPhotosOfNewsView: View {
                 }
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: loadNews.heightCellWithPhotoOfNewsView)
+        .frame(maxWidth: .infinity, maxHeight: loadNews.newsVK[indexOfOneNews].heightCellWithPhotoOfNewsView)
     }
 }

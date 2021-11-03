@@ -11,10 +11,12 @@ struct  AllGroupView: View {
 
     @ObservedObject var loadAllFoundGroups = LoadAllFoundGroups()
     @State var isPressButtonSearchGroups = false
-    let sizePhoto: CGFloat = 80
     @State var searchText = "Music"
     @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
-//    @EnvironmentObject var loadGroups: LoadGroups
+    
+    let sizeAvatar: CGFloat = 80
+    let compression: CGFloat = 0.8
+
     
     @Environment(\.managedObjectContext) var managedObjectContext
     
@@ -39,19 +41,7 @@ struct  AllGroupView: View {
                 List() {
                     ForEach(resultsSearch) { groupVK in
                             HStack {
-                                ZStack {
-                                    ViewBuilderForShadowAvatar(sizePhoto: sizePhoto) {
-                                        Circle()
-                                    }
-                                    Circle()
-                                        .stroke(Color.black, lineWidth: 1)
-                                        .frame(width: sizePhoto, height: sizePhoto)
-                                    Image(uiImage: groupVK.groupAvatar ?? UIImage(systemName: "hourglass.tophalf.fill")!)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .modifier(ModifierForAvatar(sizePhoto: sizePhoto))
-
-                                }
+                                ViewAvatarWithAnimation(sizeAvatar: sizeAvatar, compression: compression, avatar: groupVK.groupAvatar)
                                 Spacer().frame(width: 20)
                                 Text("\(groupVK.nameGroup)")
                                 Spacer()
@@ -59,14 +49,11 @@ struct  AllGroupView: View {
                             .padding(.horizontal, 0)
                             .onTapGesture {
                                 SaveAndDeleteGroupInCoreData().save(newGroup: groupVK, managedObjectContext: managedObjectContext)
-//                                loadGroups.groupsVK.append(groupVK)
                                 self.presentation.wrappedValue.dismiss()
                             }
                     }
                 }
             }
-            
-//            ButtonBack(presentation: presentation).padding(.top,15)
         .navigationBarTitle("", displayMode: .inline)
         }
         .onAppear(){

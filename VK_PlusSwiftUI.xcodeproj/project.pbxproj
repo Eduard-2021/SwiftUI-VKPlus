@@ -31,7 +31,7 @@
 		231EAA4F2724389400E663D9 /* FriendPhotoOptimalSizeEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231EAA4D2724389400E663D9 /* FriendPhotoOptimalSizeEntity+CoreDataClass.swift */; };
 		231EAA5A27243AB900E663D9 /* FriendPhotoOptimalSizeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231EAA5927243AB900E663D9 /* FriendPhotoOptimalSizeEntity+CoreDataProperties.swift */; };
 		231F930C271455F200E41784 /* ProgressOfLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F930B271455F200E41784 /* ProgressOfLoad.swift */; };
-		231F930F27147DD500E41784 /* CallRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F930E27147DD500E41784 /* CallRefreshView.swift */; };
+		231F930F27147DD500E41784 /* CellRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F930E27147DD500E41784 /* CellRefreshView.swift */; };
 		231FB4AD270D9EB700FAD570 /* GlobalProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231FB4AC270D9EB700FAD570 /* GlobalProperties.swift */; };
 		23211E85270894E6006365EF /* GeometryGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23211E84270894E6006365EF /* GeometryGetter.swift */; };
 		233A8EDA272177F500EA9486 /* ImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233A8ED9272177F500EA9486 /* ImageTransformer.swift */; };
@@ -86,6 +86,8 @@
 		23D29AD42704B2AB0023D2E5 /* ViewBuilderForShadowAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D29AD32704B2AB0023D2E5 /* ViewBuilderForShadowAvatar.swift */; };
 		23D29AD82704C73A0023D2E5 /* AllPhotosOfFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D29AD72704C73A0023D2E5 /* AllPhotosOfFriendView.swift */; };
 		23FBE1162711F67200FD07C0 /* CellWithPhotosOfNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FBE1152711F67200FD07C0 /* CellWithPhotosOfNewsView.swift */; };
+		23FFADB9272E991800968118 /* ViewAvatarWithAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FFADB8272E991800968118 /* ViewAvatarWithAnimation.swift */; };
+		23FFADBE272EB02200968118 /* ViewLoadingWith3AnimatedDots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FFADBD272EB02200968118 /* ViewLoadingWith3AnimatedDots.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,7 +115,7 @@
 		231EAA4D2724389400E663D9 /* FriendPhotoOptimalSizeEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FriendPhotoOptimalSizeEntity+CoreDataClass.swift"; path = "../../../../FriendPhotoOptimalSizeEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		231EAA5927243AB900E663D9 /* FriendPhotoOptimalSizeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FriendPhotoOptimalSizeEntity+CoreDataProperties.swift"; path = "../../../../FriendPhotoOptimalSizeEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		231F930B271455F200E41784 /* ProgressOfLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressOfLoad.swift; sourceTree = "<group>"; };
-		231F930E27147DD500E41784 /* CallRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallRefreshView.swift; sourceTree = "<group>"; };
+		231F930E27147DD500E41784 /* CellRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellRefreshView.swift; sourceTree = "<group>"; };
 		231FB4AC270D9EB700FAD570 /* GlobalProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalProperties.swift; sourceTree = "<group>"; };
 		23211E84270894E6006365EF /* GeometryGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryGetter.swift; sourceTree = "<group>"; };
 		233A8ED9272177F500EA9486 /* ImageTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTransformer.swift; sourceTree = "<group>"; };
@@ -170,6 +172,8 @@
 		23D29AD32704B2AB0023D2E5 /* ViewBuilderForShadowAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBuilderForShadowAvatar.swift; sourceTree = "<group>"; };
 		23D29AD72704C73A0023D2E5 /* AllPhotosOfFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPhotosOfFriendView.swift; sourceTree = "<group>"; };
 		23FBE1152711F67200FD07C0 /* CellWithPhotosOfNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellWithPhotosOfNewsView.swift; sourceTree = "<group>"; };
+		23FFADB8272E991800968118 /* ViewAvatarWithAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAvatarWithAnimation.swift; sourceTree = "<group>"; };
+		23FFADBD272EB02200968118 /* ViewLoadingWith3AnimatedDots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLoadingWith3AnimatedDots.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,12 +291,12 @@
 				23133AF32701D48000389EE4 /* NewsView.swift */,
 				2316A2622713864300211713 /* CellsOfNewsView */,
 				2316A2632713867A00211713 /* WorkWithNet */,
-				231F930E27147DD500E41784 /* CallRefreshView.swift */,
+				231F930E27147DD500E41784 /* CellRefreshView.swift */,
 			);
 			path = NewsView;
 			sourceTree = "<group>";
 		};
-		23211E8327089499006365EF /* AdditionalMethodsAndStruct */ = {
+		23211E8327089499006365EF /* AdditionalMethodsStructsAndViews */ = {
 			isa = PBXGroup;
 			children = (
 				23211E84270894E6006365EF /* GeometryGetter.swift */,
@@ -300,8 +304,10 @@
 				231F930B271455F200E41784 /* ProgressOfLoad.swift */,
 				230B7B4727207749005534E1 /* BarTitleForFriendAndGroups.swift */,
 				2312A8032725859D00907D3C /* ClearContainerCoreData.swift */,
+				23FFADB8272E991800968118 /* ViewAvatarWithAnimation.swift */,
+				23FFADBD272EB02200968118 /* ViewLoadingWith3AnimatedDots.swift */,
 			);
-			path = AdditionalMethodsAndStruct;
+			path = AdditionalMethodsStructsAndViews;
 			sourceTree = "<group>";
 		};
 		233A8ED3272174A900EA9486 /* CoreDataModels */ = {
@@ -518,7 +524,7 @@
 				23133AE32701CEE400389EE4 /* Views */,
 				23D29ACE2704B0460023D2E5 /* ViewModifier */,
 				23D29AD22704B26B0023D2E5 /* ViewBuilder */,
-				23211E8327089499006365EF /* AdditionalMethodsAndStruct */,
+				23211E8327089499006365EF /* AdditionalMethodsStructsAndViews */,
 				23133AE42701CF1500389EE4 /* AdditionalFiles */,
 				23CA9C1E26F7AA3300BC19EC /* Preview Content */,
 				2318109E26F9D015008D05C1 /* Colors.xcassets */,
@@ -640,6 +646,7 @@
 				2312A8042725859D00907D3C /* ClearContainerCoreData.swift in Sources */,
 				23133AE62701CF7200389EE4 /* SecondViewWithTab.swift in Sources */,
 				233F0823270367910000196A /* OnePhoto.swift in Sources */,
+				23FFADBE272EB02200968118 /* ViewLoadingWith3AnimatedDots.swift in Sources */,
 				233F0852270369930000196A /* OneNews.swift in Sources */,
 				233F08422703691E0000196A /* VKNewsViews.swift in Sources */,
 				23D29AD02704B0750023D2E5 /* ModifierForAvatar.swift in Sources */,
@@ -682,7 +689,7 @@
 				23211E85270894E6006365EF /* GeometryGetter.swift in Sources */,
 				233F084B2703695D0000196A /* VKNewsComments.swift in Sources */,
 				233A8F072721D68700EA9486 /* LoadFromNetInCoreData.swift in Sources */,
-				231F930F27147DD500E41784 /* CallRefreshView.swift in Sources */,
+				231F930F27147DD500E41784 /* CellRefreshView.swift in Sources */,
 				233F087627036ABE0000196A /* VKGroupsOfNews.swift in Sources */,
 				233F0845270369330000196A /* VKNewsReposts.swift in Sources */,
 				231C713E2712F999002E1FD9 /* CellWithGrayLineOfNewsView.swift in Sources */,
@@ -694,6 +701,7 @@
 				233F0882270378AD0000196A /* OnePhotoOfFriendOptimalSize.swift in Sources */,
 				233F08102703658C0000196A /* PathOfMethodsVK.swift in Sources */,
 				23ABA28D2726F90200EDD243 /* LoadFromNetAllGroupsInCoreData.swift in Sources */,
+				23FFADB9272E991800968118 /* ViewAvatarWithAnimation.swift in Sources */,
 				233F083F270368FE0000196A /* OneVKProfiles.swift in Sources */,
 				231FB4AD270D9EB700FAD570 /* GlobalProperties.swift in Sources */,
 			);

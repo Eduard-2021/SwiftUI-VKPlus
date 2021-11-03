@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CallRefreshView: View {
+struct CellRefreshView: View {
     @EnvironmentObject var loadNews: LoadNews
     @Binding var numberRow: Int
     
