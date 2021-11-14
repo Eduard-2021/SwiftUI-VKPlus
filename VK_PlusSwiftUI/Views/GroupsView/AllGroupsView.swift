@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct  AllGroupView: View {
+struct  AllGroupsView: View {
 
     @ObservedObject var loadAllFoundGroups = LoadAllFoundGroups()
     @State var isPressButtonSearchGroups = false

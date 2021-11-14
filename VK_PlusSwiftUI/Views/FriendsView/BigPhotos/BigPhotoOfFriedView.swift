@@ -14,6 +14,8 @@ struct BigPhotosOfFriedView: View {
     var photosVK: FetchedResults<FriendPhotoOptimalSizeEntity>
     var indicesFetchedAllPhotosFriend: [Int]
     
+    let navigationController: UINavigationController
+    
     var body: some View {
         ZStack {
             ScrollView(.horizontal, showsIndicators: false) {
@@ -29,8 +31,10 @@ struct BigPhotosOfFriedView: View {
                 }
             }
             .padding(.bottom, 80)
-            ButtonBack(presentation: presentation)
-                .padding(.top,25)
+            .padding(.top,25)
+        }
+        .onAppear(){
+            navigationController.setNavigationBarHidden(false, animated: false)
         }
     }
 }

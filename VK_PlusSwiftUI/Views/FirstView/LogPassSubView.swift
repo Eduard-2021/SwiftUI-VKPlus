@@ -30,7 +30,7 @@ struct LogPassSubView: View {
             
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
-                    Spacer().frame(height: 80)
+                    Spacer().frame(height: 150)
                     Image("PikPng.com_vk-logo-png_4815508+").resizable().aspectRatio(contentMode: .fill).frame(maxWidth: 130, maxHeight: 130)
                     Spacer().frame(height: 44)
                     VStack(spacing: 5){

@@ -183,38 +183,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FD485BBB-8BF1-4EBD-B1FC-3660298A76BC"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VK_PlusSwiftUI/Views/FriendsView/ListOfAllFriends/LoadFromNetInCoreData.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "loadingInCoreData(users:managedObjectContext:fetchedFriends:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8ECBD07C-AAA0-4E21-8FA4-4FD1B1BE011A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VK_PlusSwiftUI/Views/FriendsView/ListOfAllFriends/LoadFromNetInCoreData.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "loadingInCoreData(users:managedObjectContext:fetchedFriends:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "B25D9976-0CDC-4C2A-BED9-53A6740E8B88"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -226,6 +194,22 @@
             endingLineNumber = "138"
             landmarkName = "loadPhoto(isRefresh:itemsVKUnwrapped:profilesVKUsers:profilesVKGroups:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "64911B40-FAAE-4FCE-AFDE-670B56E3FD6C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VK_PlusSwiftUI/Views/SecondView/WebLoadView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

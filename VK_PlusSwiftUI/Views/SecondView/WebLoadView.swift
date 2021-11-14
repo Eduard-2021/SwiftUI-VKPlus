@@ -133,21 +133,18 @@ class WebViewModel: ObservableObject {
 }
 
 
-struct WebLoad: View {
+struct WebLoadView: View {
     @ObservedObject var model = WebViewModel()
-    @State var isAuthorizationVK = false
+    @StateObject var webLoadViewModel: WebLoadViewModel
 
     var body: some View {
         VStack {
-            WebView(isAuthorizationVK: $isAuthorizationVK, webView: model.webView)
+            WebView(isAuthorizationVK: $webLoadViewModel.isAuthorizationVK, webView: model.webView)
 //                .frame(height: UIScreen.main.bounds.height-400)
 //            Text("Логин: +380970795220")
 //            Text("Пароль: 171819B1")
 //            Spacer()
         }
-        .fullScreenCover(isPresented: $isAuthorizationVK, content: {
-            SecondViewWithTab()
-        })
     }
 }
 

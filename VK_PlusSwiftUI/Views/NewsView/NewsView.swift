@@ -14,6 +14,7 @@ struct  NewsView: View {
     
     private let currentTime = Date().timeIntervalSince1970
     private let durationOneDay : Double = 60*60*24
+    let navigationController: UINavigationController
     
     var body: some View {
         ZStack {
@@ -53,6 +54,7 @@ struct  NewsView: View {
                 .padding(.horizontal, 10)
                 .onAppear(){
                     loadNews.load(isRefresh: false)
+                    navigationController.setNavigationBarHidden(true, animated: false)
                 }
             }
             CellRefreshView(numberRow: $numberRow)

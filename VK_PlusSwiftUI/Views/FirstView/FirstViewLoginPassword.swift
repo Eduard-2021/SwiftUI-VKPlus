@@ -8,20 +8,21 @@
 import SwiftUI
 import Combine
 
+
 struct FirstViewLoginPassword: View {
     
-    @State private var isAuthorization = true
+    let navigationController: UINavigationController
+    @StateObject var firstViewLoginPasswordModel: FirstViewLoginPasswordModel
+    
     
 
     var body: some View {
-        NavigationView {
             VStack {
-                LogPassSubView(isAuthorization: $isAuthorization)
-                    .fullScreenCover(isPresented: $isAuthorization, content: {
-                            WebLoad()
-                    })
+                LogPassSubView(isAuthorization: $firstViewLoginPasswordModel.isAuthorization)
             }
-        }
+            .onAppear() {
+                navigationController.setNavigationBarHidden(true, animated: false)
+            }
     }
 }
 
@@ -31,10 +32,5 @@ extension UIApplication {
    }
 }
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FirstViewLoginPassword()
-//    }
-//}
 
 
