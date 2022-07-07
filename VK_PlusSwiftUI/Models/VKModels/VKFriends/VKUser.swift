@@ -11,9 +11,13 @@ struct VKUser: Identifiable {
     let idUser: Int
     let firstName: String
     let lastName: String
-    var fullName: String {
-        return self.lastName + " " + self.firstName
-    }
+    var fullName = ""
+//    {
+//        get {
+//            self.lastName + " " + self.firstName
+//        }
+//        set{}
+//    }
     let userAvatarURL: String
     var userAvatar: UIImage?
     var id = UUID()

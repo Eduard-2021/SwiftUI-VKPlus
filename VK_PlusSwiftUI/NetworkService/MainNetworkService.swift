@@ -90,7 +90,7 @@ final class MainNetworkService {
                     idUser: $0.idUser,
                     serialNumberPhoto: 0,
                     idPhoto: $0.idPhoto,
-                    URLimage: $0.differentSize.first(where: { (400..<650).contains($0.width) })?.url ?? "",
+                    imageURL: $0.differentSize.first(where: { (400..<650).contains($0.width) })?.url ?? "",
                     numLikes: $0.allLikes.count,
                     i_like: $0.allLikes.userLikes == 1
                     )
