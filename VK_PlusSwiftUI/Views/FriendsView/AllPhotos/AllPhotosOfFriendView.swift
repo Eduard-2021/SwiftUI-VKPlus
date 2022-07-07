@@ -21,6 +21,9 @@ struct AllPhotosOfFriendView: View {
     
     let constants = Constants()
     var gridItemLayout = Array(repeating: GridItem(.flexible(), spacing: 25, alignment: .top), count: 2)
+    let navigationController: UINavigationController
+    
+    var coordinator: FriendsCoordinator?
     
     @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
     
@@ -59,8 +62,8 @@ struct AllPhotosOfFriendView: View {
                                     .onTapGesture {
                                         //                                            ClearContainerCoreData.deleteAll(managedObjectContext: managedObjectContext, fetchedEntity: fetchedAllPhotosAllFriends)
                                         isPressedPhoto = !isPressedPhoto
+                                        coordinator?.showBigPhoto(photosVK: fetchedAllPhotosAllFriends, indicesFetchedAllPhotosFriend: indicesFetchedAllPhotosFriend)
                                     }
-                                    .fullScreenCover(isPresented: $isPressedPhoto, content: {BigPhotosOfFriedView(photosVK:fetchedAllPhotosAllFriends, indicesFetchedAllPhotosFriend: indicesFetchedAllPhotosFriend)})
                                 LikesView(fetchedPhotosFriend: fetchedAllPhotosAllFriends, index: index)
                             }
                         }
@@ -70,11 +73,11 @@ struct AllPhotosOfFriendView: View {
                 .navigationBarHidden(true)
             }
             .padding(.top,50)
-            ButtonBack(presentation: presentation)
         }
         .padding(.top,25)
         .onAppear() {
             loadAllPhotosOfFriend.load(fetchFriend: staticProperies.fetchFriend!, managedObjectContext: managedObjectContext)
+            navigationController.setNavigationBarHidden(false, animated: false)
         }
     }
 }

@@ -10,6 +10,7 @@ import Foundation
 class GlobalProperties {
     static let share = GlobalProperties()
     var useDataFromNet = true
+    var context = CoreDataService(modelName: "MainContainer").context
     
     private init(){}
 }

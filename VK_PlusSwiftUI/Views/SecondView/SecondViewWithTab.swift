@@ -8,24 +8,24 @@
 import SwiftUI
 
 struct  SecondViewWithTab: View {
-    @State var isRowSelected = false
+//    @State var isRowSelected = false
     
     var body: some View {
         VStack {
-            TabView {
-                FriendsView(isRowSelected: $isRowSelected).tabItem {
-                    Image(systemName: "person.fill")
-                    Text("Friends")
-                }
-                GroupsView().tabItem {
-                    Image(systemName: "person.3.fill")
-                    Text("Groups")
-                }
-                NewsView().tabItem {
-                    Image(systemName: "newspaper.fill")
-                    Text("News")
-                }
-            }
+//            TabView {
+//                FriendsView().tabItem {
+//                    Image(systemName: "person.fill")
+//                    Text("Friends")
+//                }
+//                GroupsView().tabItem {
+//                    Image(systemName: "person.3.fill")
+//                    Text("Groups")
+//                }
+//                NewsView().tabItem {
+//                    Image(systemName: "newspaper.fill")
+//                    Text("News")
+//                }
+//            }
         }
     }
 }

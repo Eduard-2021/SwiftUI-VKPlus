@@ -32,6 +32,8 @@ class LoadFromNetAllGroupsInCoreData: ObservableObject {
     
     private func loadingInCoreData(groups: [VKGroup], managedObjectContext: NSManagedObjectContext,  fetchedGroups: FetchedResults<GroupEntity>) {
         
+//        ClearContainerCoreData.deleteAll(managedObjectContext: managedObjectContext, fetchedEntity: fetchedGroups)
+        
         var newGroupsVK = [VKGroup]()
         
         if !fetchedGroups.isEmpty {

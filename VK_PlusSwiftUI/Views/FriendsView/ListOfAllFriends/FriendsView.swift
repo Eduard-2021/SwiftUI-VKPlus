@@ -14,9 +14,11 @@ import CoreData
 
 struct  FriendsView: View {
     var loadFriends = LoadFriends()
-    @Binding var isRowSelected: Bool
+    let navigationController: UINavigationController
+    let mainNavigationController: UINavigationController
+    
     @State var searchText = ""
-    @State var isPressedRow = false
+    @StateObject var friendsViewModel: FriendsViewModel
     @State var isPressedButtonSearch = false
     @State var indexOfSelectedRow = 0
     @State var isPressedButtonAddFriend = false
@@ -32,9 +34,7 @@ struct  FriendsView: View {
     
     
     var body: some View {
-        NavigationView {
             VStack(spacing: 0) {
-                NavigationLink(destination: AllPhotosOfFriendView(), isActive:  $isPressedRow, label: {EmptyView()})
                 ZStack {
                     Rectangle()
                         .fill(Color(#colorLiteral(red: 0.2119982541, green: 0.5794246793, blue: 0.9729811549, alpha: 1)))
@@ -54,7 +54,7 @@ struct  FriendsView: View {
                                         staticProperies.fetchFriend = resultsSearch[indexOfSelectedRow]
                                     }
                                     DispatchQueue.main.async {
-                                        isPressedRow = !isPressedRow
+                                        friendsViewModel.isPressedRow = !friendsViewModel.isPressedRow
                                     }
                                 }
                         }
@@ -64,9 +64,10 @@ struct  FriendsView: View {
                 .padding(.top, 10)
             }
             .navigationBarHidden(true)
-        }
         .onAppear() {
             loadFriends.load(managedObjectContext: managedObjectContext, fetchedFriends: friends)
+            mainNavigationController.setNavigationBarHidden(true, animated: false)
+            navigationController.setNavigationBarHidden(true, animated: false)
         }
         
     }

@@ -12,7 +12,8 @@ var isReturnOnGroupsView = false
 
 struct  GroupsView: View {
     @ObservedObject var loadGroups = LoadFromNetAllGroupsInCoreData()
-    @State var isPressedButtonAddGroups = false
+    let navigationController: UINavigationController
+    @StateObject var groupsViewModel: GroupsViewModel
     @State var isPressedButtonSearch = false
     let sizeAvatar: CGFloat = 80
     let compression: CGFloat = 0.8
@@ -28,14 +29,14 @@ struct  GroupsView: View {
     ) var fetchedGroups: FetchedResults<GroupEntity>
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             VStack(spacing: 0) {
-                NavigationLink(destination: AllGroupView(), isActive: $isPressedButtonAddGroups, label: {EmptyView()})
+//                NavigationLink(destination: AllGroupsView(), isActive: $groupsViewModel.isPressedButtonAddGroups, label: {EmptyView()})
                 ZStack {
                     Rectangle()
                         .fill(Color(#colorLiteral(red: 0.2119982541, green: 0.5794246793, blue: 0.9729811549, alpha: 1)))
                         .frame(width: UIScreen.main.bounds.width, height: 70 )
-                    if !isPressedButtonSearch {StandartBarTitleForFriendAndGroups(isPressedButtonSearch: $isPressedButtonSearch, isPressedButtonAddItem:  $isPressedButtonAddGroups, titleText: "Сообщества")}
+                    if !isPressedButtonSearch {StandartBarTitleForFriendAndGroups(isPressedButtonSearch: $isPressedButtonSearch, isPressedButtonAddItem:  $groupsViewModel.isPressedButtonAddGroups, titleText: "Сообщества")}
                     else {SearchBarTitleForFriendAndGroups(isPressedButtonSearch: $isPressedButtonSearch, searchText: $searchText)}
                 }
                 
@@ -57,9 +58,10 @@ struct  GroupsView: View {
                 .listStyle(PlainListStyle())
             }
             .navigationBarHidden(true)
-        }
+//        }
         .onAppear(){
             loadGroups.load(fetchedGroups: fetchedGroups, managedObjectContext: managedObjectContext)
+            navigationController.setNavigationBarHidden(true, animated: false)
         }
         .environmentObject(loadGroups)
     }
