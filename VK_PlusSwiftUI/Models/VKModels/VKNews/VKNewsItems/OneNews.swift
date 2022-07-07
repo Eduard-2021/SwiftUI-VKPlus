@@ -26,6 +26,7 @@ struct OneNews: Decodable, Identifiable {
     var numberPostedPhotoInPreviousRows = [Int]()
     var sizePhotosInRows = [CGFloat]()
     var arrayOfLargestPhotosOfNews=[UIImage]()
+    var heightCellWithPhotoOfNewsView: CGFloat = 0
     var id = UUID()
 
     struct VKAttachmentCommon: Identifiable {

@@ -24,12 +24,12 @@ struct  NewsView: View {
                 
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVStack(alignment: .center, spacing: 10) {
-                        if loadNews.newsVK.count == 0 {ProgressOfLoad(heigth: UIScreen.main.bounds.height, color: .gray, message: "")}
+                        if loadNews.newsVK.count == 0 {
+//                            ProgressOfLoad(heigth: UIScreen.main.bounds.height, color: .gray, message: "")
+                            ViewLoadingWith3AnimatedDots(heigth: UIScreen.main.bounds.height)
+                        }
                         else {
                             ForEach(0...loadNews.newsVK.count-1, id: \.self) {indexOfNews in
-//                                if loadNews.newsVK[indexOfNews].attachments.first(where: {$0.type == "photo"}) == nil
-//                                    {EmptyView()}
-//                                else {
                                     ForEach(0...4, id: \.self) { index in
                                         switch index {
                                         case 0 :
@@ -46,7 +46,6 @@ struct  NewsView: View {
                                             EmptyView()
                                         }
                                     }
-//                                }
                             }
                         }
                     }
@@ -56,7 +55,7 @@ struct  NewsView: View {
                     loadNews.load(isRefresh: false)
                 }
             }
-            CallRefreshView(numberRow: $numberRow)
+            CellRefreshView(numberRow: $numberRow)
         }
         .environmentObject(loadNews)
     }

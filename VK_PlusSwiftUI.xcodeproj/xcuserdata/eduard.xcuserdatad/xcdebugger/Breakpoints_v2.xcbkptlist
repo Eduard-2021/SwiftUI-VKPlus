@@ -119,22 +119,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8F48A74F-E7D3-41AA-8239-4179B8DF8726"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VK_PlusSwiftUI/Views/NewsView/CellsOfNewsView/CellWithLikesOfNewsView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "B52C8FD0-823B-4AF2-9C8F-2C497E75F388"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -225,6 +209,22 @@
             startingLineNumber = "36"
             endingLineNumber = "36"
             landmarkName = "loadingInCoreData(users:managedObjectContext:fetchedFriends:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B25D9976-0CDC-4C2A-BED9-53A6740E8B88"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VK_PlusSwiftUI/Views/NewsView/WorkWithNet/LoadNews.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "loadPhoto(isRefresh:itemsVKUnwrapped:profilesVKUsers:profilesVKGroups:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

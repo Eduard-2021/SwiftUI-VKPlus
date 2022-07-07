@@ -135,7 +135,9 @@ class LoadNews: ObservableObject {
                 newsVK = newsVKWithAvatarAndPhotos + newsVK
             }
             else {
-                newsVK.append(contentsOf: newsVKWithAvatarAndPhotos)
+                var NewNews =  newsVK
+                NewNews.append(contentsOf: newsVKWithAvatarAndPhotos)
+                newsVK = NewNews
             }
             if nearLastElementInArrayOfNews {
                 nearLastElementInArrayOfNews = false
@@ -184,8 +186,11 @@ class LoadNews: ObservableObject {
                 var sizePhotosInRows = [CGFloat]()
                 var numberPostedPhoto = 0
                 if oneNews.numberRowsForPhotoInAttachement != 0 {
+                    let heightPhoto = Double(oneNews.attachments[oneNews.attachments.firstIndex(where: {$0.type == "photo"})!].attachmentVKPhoto.photo.sizes.first!.height)
+                    let widthPhoto = Double(oneNews.attachments[oneNews.attachments.firstIndex(where: {$0.type == "photo"})!].attachmentVKPhoto.photo.sizes.first!.width)
+                    let attitude = heightPhoto/widthPhoto
                     
-                     let heightOnePhoto = CGFloat(oneNews.attachments[oneNews.attachments.firstIndex(where: {$0.type == "photo"})!].attachmentVKPhoto.photo.sizes.first!.height / oneNews.attachments[oneNews.attachments.firstIndex(where: {$0.type == "photo"})!].attachmentVKPhoto.photo.sizes.first!.width) * UIScreen.main.bounds.width
+                    let heightOnePhoto = CGFloat(attitude * Double(UIScreen.main.bounds.width))
                     
                     heightCellWithPhotoOfNewsView = heightOnePhoto * 1.7
  
@@ -259,6 +264,7 @@ class LoadNews: ObservableObject {
                 nowDownloadedArrayOfNewsVK[index].numberPhotosInEachRow = numberPhotosInRow
                 nowDownloadedArrayOfNewsVK[index].numberPostedPhotoInPreviousRows = numberPostedPhotoInPreviousRows
                 nowDownloadedArrayOfNewsVK[index].sizePhotosInRows = sizePhotosInRows
+                nowDownloadedArrayOfNewsVK[index].heightCellWithPhotoOfNewsView = heightCellWithPhotoOfNewsView
             }
         }
         
